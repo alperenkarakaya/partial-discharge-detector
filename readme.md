@@ -34,11 +34,6 @@ Gemini Flash 2.0 destekli, yapay zeka tabanlı Kısmi Boşalma (Partial Discharg
 3. **"Create API Key"** butonuna tıklayın
 4. API anahtarınızı kopyalayın (ücretsiz!)
 
-**Windows PowerShell için:**
-```powershell
-echo "GEMINI_API_KEY=AIza_sizin_api_key_buraya" | Out-File -Encoding UTF8 .env
-```
-
 ### Klasör Yapısı
 
 ```
@@ -64,6 +59,53 @@ pd-detection-system/
         ├── 730183.npy
         └── 730270.npy
 ```
+🧩 Genel Amaç
+Bu proje, elektrik sistemlerinde PD (Partial Discharge - Kısmi Boşalma) sinyallerini tespit etmek için geliştirilen bir analiz aracıdır.
+Sinyaller .npy (NumPy array) veya .csv dosyaları halinde gelir ve sistem bunları Gemini Flash 2.0 yapay zekasıyla analiz eder.
+
+Başlatma
+
+Script’i çalıştırdığında (python pd_detection_demo.py), Gradio arayüzü açılır.
+Buradan tek tek .npy dosyaları seçip analiz yapabilirsin.
+
+🧠 Temel İş Akışı
+1. Dosya Analizi (parse_npy_file)
+.npy dosyasını okur (tek boyutlu bir sinyal dizisi olmalı).
+Ortalama, standart sapma, pik, minimum, aralık, medyan gibi istatistikleri çıkarır.
+Ani sıçramaları (|fark| > 10) sayar.
+Dosya adında pd veya no_pd geçiyorsa, etiketi otomatik çıkarır.
+
+2. Gemini ile Analiz (analyze_with_gemini_npy)
+Yukarıdaki istatistikleri alıp Gemini modeline bir prompt gönderir.
+Gemini şu formatta yanıt verir:
+
+TAHMIN: 1
+GUVEN: 83
+ACIKLAMA: Sinyalde yüksek pikler ve ani sıçramalar gözlendi, PD var.
+OGRENME_NOTU: PD verilerinde benzer pattern görüldü.
+
+Sonuçlar saklanır (pd_learning_database_demo.json) ve “öğrenme geçmişi” oluşturulur.
+
+3. Gradio Arayüzü
+Arayüzde 2 ana sekme vardır:
+
+📄 Tek Dosya Analizi: .npy dosyası girilir, analiz sonucu + grafik çıkar.
+🧠 Öğrenme İstatistikleri: Doğruluk oranı ve son öğrenilen veriler listelenir.
+📊 Görsel ve Çıktılar
+
+Matplotlib grafiği: sinyalin spektrum şeklinde gösterimi.
+CSV çıktısı: analiz istatistiklerinin kaydedilebileceği mini tablo.
+Öğrenme özeti: geçmiş analizlerden öğrenilen örnekler.
+
+💾 Öğrenme Mekanizması
+Her çalıştırmada sonuçlar pd_learning_database_demo.json dosyasına eklenir.
+Böylece sonraki analizlerde geçmiş sonuçlardan kısa bir “öğrenme bağlamı” eklenir.
+
+🚀 Özetle
+Bu sistem:
+PD sinyallerini otomatik analiz eder,
+Gemini’ye istatistikleri gönderip PD olup olmadığını tahmin ettirir,
+Sonuçları kaydeder, görselleştirir ve zamanla “öğrenir”.
 
 ## 📖 Kullanım Kılavuzu
 
@@ -110,3 +152,5 @@ pd-detection-system/
 - ✅ Float değerler (dBm)
 - ✅ Finite değerler (NaN/Inf olmamalı)
 - ✅ Minimum 100 veri noktası önerilir
+
+
