@@ -154,7 +154,7 @@ Sonuçları kaydeder, görselleştirir ve zamanla “öğrenir”.
 - ✅ Minimum 100 veri noktası önerilir
 
 
-##!!**Local bilgisayarımda çalıştırabildiğim şekilde maalesef çalıştıramadım, belge yükleme mantığı olduğundan dolayı yapıyı tekrar kuramadım ve bozdum. Belge yüklemeli çalışan versiyonu bu şekilde, yine de belgeyi kendiniz indirip kurmak isterseniz farklı bir huggingface linki olarak buraya ekleyeceğim.**!!
+## **Local bilgisayarımda çalıştırabildiğim şekilde maalesef çalıştıramadım, belge yükleme mantığı olduğundan dolayı yapıyı tekrar kuramadım ve bozdum. Belge yüklemeli çalışan versiyonu bu şekilde, yine de belgeyi kendiniz indirip kurmak isterseniz farklı bir huggingface linki olarak buraya ekleyeceğim.**
 
 <img width="1764" height="903" alt="image" src="https://github.com/user-attachments/assets/7ab222b2-e6db-464a-b085-56cdb38f1a42" />
 <img width="1649" height="885" alt="image" src="https://github.com/user-attachments/assets/f8ab09e4-460c-4eae-a669-6ed4371ee314" />
