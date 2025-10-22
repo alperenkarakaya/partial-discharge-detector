@@ -5,6 +5,7 @@
 [![Gemini](https://img.shields.io/badge/Gemini-2.0%20Flash-green.svg)](https://ai.google.dev/)
 
 (directory konumu yoluyla çalışan versiyon) https://huggingface.co/spaces/alperenkk/partial-discharge-detector
+
 (belgeleri manuel eklemeniz gereken versiyon) https://huggingface.co/spaces/alperenkk/PartialDischargeDetector
 
 Gemini Flash 2.0 destekli, yapay zeka tabanlı Kısmi Boşalma (Partial Discharge - PD) tespit ve analiz sistemi. Spektrum verilerini analiz eder, öğrenir ve interaktif chatbot ile sonuçları tartışmanıza olanak sağlar.
