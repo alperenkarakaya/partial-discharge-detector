@@ -7,7 +7,7 @@
 (directory konumu yoluyla çalışan versiyon) https://huggingface.co/spaces/alperenkk/partial-discharge-detector
 
 (belgeleri manuel eklemeniz gereken versiyon) https://huggingface.co/spaces/alperenkk/PartialDischargeDetector
-### (belgeleri manuel eklemeniz gereken versiyon için) Belgeler pd veya no_pd olarak belgeler kısmına yüklenmiştir buradan alarak kodu deneyebilirsiniz. Öğrenim - Analiz farklı farklı tablara ayrılmıştır, çizilen grafikleri de inceleyebilirsiniz. 
+### (belgeleri manuel eklemeniz gereken versiyon için) Belgeler pd veya no_pd olarak belgeler kısmına yüklenmiştir buradan alarak kodu deneyebilirsiniz. Öğrenim - Analiz farklı farklı tablara ayrılmıştır, çizilen grafikleri de inceleyebilirsiniz. Ayrıca belgeler github'da da mevcut. pd_valus_for_training içinde .npy uzantılı PD içeren belgeler mevcut, npy_examples ve csv_examples kısmında da diğer farklı örnekleri PD veya no PD olarak yükleyip deneyebilirsiniz.
 
 Gemini Flash 2.0 destekli, yapay zeka tabanlı Kısmi Boşalma (Partial Discharge - PD) tespit ve analiz sistemi. Spektrum verilerini analiz eder, öğrenir ve interaktif chatbot ile sonuçları tartışmanıza olanak sağlar.
 
